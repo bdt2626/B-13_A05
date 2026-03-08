@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+    <!-- nav bar here -->
+<div class="navbar bg-base-100 shadow-sm px-4 md:px-10 flex-col md:flex-row gap-4 py-3 md:py-0">
+  <div class="flex-1 flex items-center justify-between w-full md:w-auto">
+    <div class="flex items-center">
+      <img src="./images/github-logo.png" class="w-[32px] h-[32px] md:w-[40px] md:h-[40px]" alt="Logo">
+      <a class="font-semibold text-lg md:text-xl px-2">GitHub Issues Tracker</a>
+    </div>
+    </div>
+
+  <div class="flex flex-col md:flex-row items-center gap-3 md:gap-6 w-full md:w-auto">
+    
+    <div class="relative w-full md:w-[300px]">
+      <input 
+        type="text" 
+        placeholder="      Search issues..." 
+        class="input input-bordered w-full peer focus:placeholder:text-transparent transition-all duration-200" 
+      />
+      <i class="fa-solid fa-magnifying-glass absolute top-3.5 left-3 z-20 pointer-events-none transition-opacity duration-200 peer-focus:opacity-0 peer-[:not(:placeholder-shown)]:opacity-0"></i>
+    </div>
+
+    <div class="w-full md:w-auto">
+      <button class="btn btn-primary w-full md:w-auto">+ New Issue</button>
+    </div>
+  </div>
+</div>
+    <!-- nav bar ends -->
+
+    <!-- buttons are here -->
+    <section class="container mx-auto mt-15 py-6 px-4 bg-white shadow-sm rounded-[10px]">
+        <button class="btn btn-primary w-full md:w-[120px] md:mr-2 mb-2 md:mb-0 ">All</button>
+        <button class="btn btn-outline w-full md:w-[120px] md:mr-2 mb-2 md:mb-0">Open</button>
+        <button class="btn btn-outline w-full md:w-[120px] mb-2 md:mb-0">Closed</button>
+
+    </section>
+  <!-- buttons end here -->
+   
+  <!-- issues counter starts here -->
+  <section class="container mx-auto mt-4 px-4 rounded-[10px] bg-white shadow-sm">
+
+        <div class="py-4 flex flex-col md:flex-row md:justify-between gap-4" id="issue-counter">
+
+        
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-[#ECE4FF] rounded-full flex items-center justify-center">
+              <img src="./images/Aperture.png" class="w-6 h-6">
+            </div>
+
+            <div>
+              <h2 class="font-bold text-xl md:text-2xl">50 issues</h2>
+              <p class="text-sm md:text-base">Track and manage your project issues</p>
+            </div>
+          </div>
+
+          
+          <div class="flex gap-6 items-center md:justify-end">
+            <p class="px-4">
+              <i class="fa-solid fa-circle text-[#00A96E] mr-1 text-sm"></i>
+              Open
+            </p>
+
+            <p>
+              <i class="fa-solid fa-circle text-[#A855F7] mr-1 text-sm"></i>
+              Close
+            </p>
+          </div>
+
+        </div>
+        
+  </section>
+  <!-- issues counter ends here -->
+
+   <!-- issues container starts here -->
+
+  <section class="container mx-auto mt-4 px-4 rounded-[10px] bg-white shadow-sm">
+    <div id="all-issues" class="flex flex-col md:flex-col-4 justify-between">
+      
+      <div class="card bg-base-100 shadow-md border-t-4 border-green-500 w-80">
+
+          <div class="card-body">
+
+            <!-- Top Row -->
+            <div class="flex justify-between items-center">
+              <div class="flex items-center justify-center">
+                <img src="./images/Open-Status.png">
+              </div>
+
+              <span class="badge badge-error badge-outline">HIGH</span>
+            </div>
+
+           
+            <h2 class="card-title text-base">
+              Fix Navigation Menu On Mobile Devices
+            </h2>
+
+           <p class="text-sm text-gray-500">
+              The navigation menu doesn't collapse properly on mobile devices...
+            </p>
+
+           <div class="flex gap-2 mt-2">
+              <span class="badge badge-error badge-outline">BUG</span>
+              <span class="badge badge-warning badge-outline">HELP WANTED</span>
+            </div>
+
+          </div>
+
+        <div class="border-t px-6 py-3 text-sm text-gray-500">
+          <p>#1 by john_doe</p>
+          <p>1/15/2024</p>
+        </div>
+
+      </div>
+
+
+    </div>
+
+       
+        
+  </section>
+   <!-- issues container ends here -->
+  
+
+
+
+    <!-- js connected here -->
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
