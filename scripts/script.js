@@ -12,18 +12,34 @@ async function allIssuesLoad(){
     const div = document.createElement("div");
 
     div.innerHTML = `
-    <div class="card bg-base-100 shadow-md border-t-4 border-green-500 w-80" id="single-issue">
+   
+
+    <div class="card bg-base-100 shadow-md border-t-4 w-80 min-h-[300px] 
+    ${idd.status.toLowerCase() === 'closed' ? 'border-red-500' : 'border-green-500'}" 
+    id="single-issue">
 
           <div class="card-body">
 
-            <!-- Top Row -->
-            <div class="flex justify-between items-center">
-              <div class="flex items-center justify-center">
-                <img src="./images/Open-Status.png">
-              </div>
+           
+        <div class="flex justify-between items-center">
+         <p class="text-sm text-gray-500 hidden">
+              ${idd.status}
+            </p>
 
-              <span class="badge bg-[#FEECEC] text-[#EF4444]">HIGH</span>
-            </div>
+          <div class="flex items-center justify-center">
+            <img src="${idd.priority === 'low' ? './images/Closed-Status.png' : './images/Open-Status.png'}">
+          </div>
+
+          <span class="badge 
+              ${idd.priority.toLowerCase() === 'high' ? 'bg-[#FEECEC] text-[#EF4444]' : 
+                idd.priority.toLowerCase() === 'medium' ? 'bg-[#FFFBEB] text-[#D97706]' : 
+                'bg-[#F3F4F6] text-[#6B7280]'}">
+              ${idd.priority}
+            </span>
+        </div>
+
+
+
 
            
             <h2 class="card-title text-base">
@@ -31,23 +47,29 @@ async function allIssuesLoad(){
             </h2>
 
            <p class="text-sm text-gray-500">
-              The navigation menu doesn't collapse properly on mobile devices...
+              ${idd.description}
             </p>
 
-           <div class="flex gap-2 mt-2">
-              <span class="badge bg-[#FEECEC] border-2 border-[#FECACA] text-[#EF4444]">BUG</span>
-              <span class="badge bg-[#FFF8DB] border-2 border-[#FDE68A] text-[#D97706]">HELP WANTED</span>
-            </div>
+           
+
+            <div class="flex gap-2 items-center">
+                ${idd.labels.map(label => `
+                    <span class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-amber-500">${label}</span>
+                `).join('')}
+                </div>
+
+
+
 
           </div>
 
         <div class="border-t px-6 py-2 text-sm text-gray-500 flex justify-between items-center">
-          <div><p><span>#1 </span>by john_doe</p></div>
-          <div><p>2024-01-15T10:30:00Z</p></div>
+          <div><p><span>#1 </span>by ${idd.author}</p></div>
+          <div><p>${idd.createdAt}</p></div>
         </div>
         <div class="px-6 pb-2 text-sm text-gray-500 flex justify-between items-center">
-          <div><p>assignee:<span>jane_smith</span></div>
-          <div><p>2024-01-15T10:30:00Z</p></div>
+          <div><p>assignee: <span>${idd.assignee}</span></div>
+          <div><p>${idd.updatedAt}</p></div>
         </div>
         
 
