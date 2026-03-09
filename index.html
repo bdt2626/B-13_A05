@@ -85,9 +85,9 @@
    <!-- issues container starts here -->
 
   <section class="container mx-auto mt-4 px-4 rounded-[10px] bg-white shadow-sm">
-    <div id="all-issues" class="flex flex-col md:flex-col-4 justify-between">
+    <div id="all-issues" class="grid grid-cols-1 md:grid-cols-4 gap-6 ">
       
-      <div class="card bg-base-100 shadow-md border-t-4 border-green-500 w-80">
+      <div class="card bg-base-100 shadow-md border-t-4 border-green-500 w-80" id="single-issue">
 
           <div class="card-body">
 
@@ -97,7 +97,7 @@
                 <img src="./images/Open-Status.png">
               </div>
 
-              <span class="badge badge-error badge-outline">HIGH</span>
+              <span class="badge bg-[#FEECEC] text-[#EF4444]">HIGH</span>
             </div>
 
            
@@ -110,18 +110,64 @@
             </p>
 
            <div class="flex gap-2 mt-2">
-              <span class="badge badge-error badge-outline">BUG</span>
-              <span class="badge badge-warning badge-outline">HELP WANTED</span>
+              <span class="badge bg-[#FEECEC] border-2 border-[#FECACA] text-[#EF4444]">BUG</span>
+              <span class="badge bg-[#FFF8DB] border-2 border-[#FDE68A] text-[#D97706]">HELP WANTED</span>
             </div>
 
           </div>
 
-        <div class="border-t px-6 py-3 text-sm text-gray-500">
-          <p>#1 by john_doe</p>
-          <p>1/15/2024</p>
+        <div class="border-t px-6 py-2 text-sm text-gray-500 flex justify-between items-center">
+          <div><p><span>#1 </span>by john_doe</p></div>
+          <div><p>2024-01-15T10:30:00Z</p></div>
         </div>
+        <div class="px-6 pb-2 text-sm text-gray-500 flex justify-between items-center">
+          <div><p>assignee:<span>jane_smith</span></div>
+          <div><p>2024-01-15T10:30:00Z</p></div>
+        </div>
+        
 
       </div>
+       <div class="card bg-base-100 shadow-md border-t-4 border-green-500 w-80" id="single-issue">
+
+          <div class="card-body">
+
+            <!-- Top Row -->
+            <div class="flex justify-between items-center">
+              <div class="flex items-center justify-center">
+                <img src="./images/Open-Status.png">
+              </div>
+
+              <span class="badge bg-[#FEECEC] text-[#EF4444]">HIGH</span>
+            </div>
+
+           
+            <h2 class="card-title text-base">
+              Fix Navigation Menu On Mobile Devices
+            </h2>
+
+           <p class="text-sm text-gray-500">
+              The navigation menu doesn't collapse properly on mobile devices...
+            </p>
+
+           <div class="flex gap-2 mt-2">
+              <span class="badge bg-[#FEECEC] border-2 border-[#FECACA] text-[#EF4444]">BUG</span>
+              <span class="badge bg-[#FFF8DB] border-2 border-[#FDE68A] text-[#D97706]">HELP WANTED</span>
+            </div>
+
+          </div>
+
+        <div class="border-t px-6 py-2 text-sm text-gray-500 flex justify-between items-center">
+          <div><p><span>#1 </span>by john_doe</p></div>
+          <div><p>2024-01-15T10:30:00Z</p></div>
+        </div>
+        <div class="px-6 pb-2 text-sm text-gray-500 flex justify-between items-center">
+          <div><p>assignee:<span>jane_smith</span></div>
+          <div><p>2024-01-15T10:30:00Z</p></div>
+        </div>
+        
+
+      </div>
+      
 
 
     </div>
