@@ -1,15 +1,40 @@
 const allIssues = document.getElementById("all-issues");
+const issueCounter = document.getElementById("issue-counter")
+
+
+function handleButtonClick(buttonName) {
+  
+  const allButtons = document.querySelectorAll('.filter-btn');
+
+   allButtons.forEach(btn => {
+    btn.classList.remove('btn-primary');
+    btn.classList.add('btn-outline');
+  });
+
+  const clickedButton = document.getElementById(`btn-${buttonName}`);
+
+  
+  clickedButton.classList.add('btn-primary');
+  clickedButton.classList.remove('btn-outline');
+}
 
 
 
-async function allIssuesLoad(){
-    const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+async function allIssuesLoad(statusName = 'all') {
+    const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
     const mrData = await res.json();
 
     allIssues.innerText = "";
 
-    mrData.data.forEach((idd) => {
-    const div = document.createElement("div");
+    
+    const filteredData = mrData.data.filter(idd => {
+        if (statusName === 'all') return true;
+        return idd.status.toLowerCase() === statusName.toLowerCase();
+    });
+
+   
+    filteredData.forEach((idd) => {
+        const div = document.createElement("div");
 
     div.innerHTML = `
    
@@ -90,8 +115,8 @@ async function allIssuesLoad(){
         
     
 //    })
+  issueCounter.innerText = allIssues.children.length;
 
     }
-
 
 allIssuesLoad();
