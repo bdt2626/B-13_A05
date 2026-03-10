@@ -3,3 +3,7 @@
 body{
     background-color: #F8FAFC;
 }
+
+html {
+    overflow-y: scroll;
+}
