@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <style>body { opacity: 0; }
-    </style>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+
+    <style>
+        
+        body { opacity: 0; transition: opacity 0.3s ease-in-out; }
+    </style>
+    
     <script>
+       
         if (sessionStorage.getItem('isLoggedIn') !== 'true') {
             window.location.replace('login.html');
         } else {
+            
             document.addEventListener("DOMContentLoaded", () => {
                 document.body.style.opacity = "1";
             });
         }
     </script>
-    <link rel="stylesheet" href="./styles/style.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
+
+
+
+
+
 <body>
   
 
     <!-- nav bar here -->
-<div class="navbar bg-base-100 shadow-sm px-4 md:px-10 flex-col md:flex-row gap-4 py-3 md:py-0">
+<div class="navbar bg-base-100 shadow-sm px-4 md:px-10 flex flex-col md:flex-row gap-4 py-3 md:py-0">
+  
   <div class="flex-1 flex items-center justify-between w-full md:w-auto">
     <div class="flex items-center">
-      <img src="./images/github-logo.png" class="w-[32px] h-[32px] md:w-[40px] md:h-[40px]" alt="Logo">
+      <img src="./images/github-logo.png" class="w-8 h-8 md:w-10 md:h-10" alt="Logo">
       <a class="font-semibold text-lg md:text-xl px-2">GitHub Issues Tracker</a>
     </div>
-    </div>
+  </div>
 
   <div class="flex flex-col md:flex-row items-center gap-3 md:gap-6 w-full md:w-auto">
     
     <div class="relative w-full md:w-[300px]">
-      <input id="search-input"
-        onkeyup="handleSearch()"
-        type="text" 
-        placeholder="      Search issues..." 
-        class="input input-bordered w-full peer focus:placeholder:text-transparent transition-all duration-200" 
-      />
-      <i class="fa-solid fa-magnifying-glass absolute top-3.5 left-3 z-20 pointer-events-none transition-opacity duration-200 peer-focus:opacity-0 peer-[:not(:placeholder-shown)]:opacity-0"></i>
+      <input id="search-input" onkeyup="handleSearch()" type="text" placeholder="Search issues..." 
+        class="input input-bordered w-full pl-10 peer focus:placeholder:text-transparent transition-all duration-200" />
+      <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 z-20 pointer-events-none text-gray-400 peer-focus:opacity-0 peer-[:not(:placeholder-shown)]:opacity-0"></i>
     </div>
 
     <div class="w-full md:w-auto">
