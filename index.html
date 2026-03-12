@@ -94,7 +94,7 @@
 
   <section class="container mx-auto mt-4 px-4 rounded-[10px] bg-white shadow-sm">
     <!-- <div id="all-issues" class="grid grid-cols-1 md:grid-cols-4 gap-6 "> -->
-      <div id="all-issues" class="grid grid-cols-1 md:grid-cols-4 gap-6 min-h-[600px] items-start ">
+      <div id="all-issues" class="grid grid-cols-1 md:grid-cols-4 gap-6 min-h-[600px] items-start mx-auto ">
         <div id="main-loader" class="col-span-full flex justify-center py-20">
         <span class="loading loading-spinner loading-lg text-primary"></span>
     </div>
@@ -190,46 +190,46 @@
   </section>
    <!-- issues container ends here -->
   
-<dialog id="issue_modal" class="modal modal-bottom sm:modal-middle bg-black/40">
-  <div class="modal-box relative bg-white rounded-lg shadow-xl p-6 max-w-lg border border-gray-100">
-    
-    <form method="dialog">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-gray-400">✕</button>
-    </form>
-
-    <div class="mb-4">
-      <h3 id="modal-title" class="font-bold text-xl text-slate-900 mb-1"></h3>
-      <div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
-        <span id="modal-status-badge"></span>
-        <span>•</span>
-        <span id="modal-meta-info"></span>
-      </div>
-    </div>
-
-    <div id="modal-labels" class="flex flex-wrap gap-1.5 mb-5"></div>
-
-    <div class="mb-6 text-slate-600 leading-normal text-sm">
-      <p id="modal-description"></p>
-    </div>
-
-    <div class="bg-slate-50 border border-slate-100 rounded-lg p-4 grid grid-cols-2 gap-4 mb-6">
-      <div>
-        <h4 class="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Assignee:</h4>
-        <p id="modal-assignee" class="font-bold text-slate-800 text-base"></p>
-      </div>
-      <div>
-        <h4 class="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Priority:</h4>
-        <span id="modal-priority-badge"></span>
-      </div>
-    </div>
-
-    <div class="modal-action mt-0 border-t border-gray-50 pt-4 flex justify-end">
+  <dialog id="issue_modal" class="modal modal-bottom sm:modal-middle bg-black/40">
+    <div class="modal-box relative bg-white rounded-lg shadow-xl p-6 max-w-lg border border-gray-100">
+      
       <form method="dialog">
-        <button class="btn btn-primary btn-sm px-6 h-10 bg-indigo-600 border-none hover:bg-indigo-700 text-white normal-case">Close</button>
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-gray-400">✕</button>
       </form>
+
+      <div class="mb-4">
+        <h3 id="modal-title" class="font-bold text-xl text-slate-900 mb-1"></h3>
+        <div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
+          <span id="modal-status-badge"></span>
+          <span>•</span>
+          <span id="modal-meta-info"></span>
+        </div>
+      </div>
+
+      <div id="modal-labels" class="flex flex-wrap gap-1.5 mb-5"></div>
+
+      <div class="mb-6 text-slate-600 leading-normal text-sm">
+        <p id="modal-description"></p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-100 rounded-lg p-4 grid grid-cols-2 gap-4 mb-6">
+        <div>
+          <h4 class="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Assignee:</h4>
+          <p id="modal-assignee" class="font-bold text-slate-800 text-base"></p>
+        </div>
+        <div>
+          <h4 class="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Priority:</h4>
+          <span id="modal-priority-badge"></span>
+        </div>
+      </div>
+
+      <div class="modal-action mt-0 border-t border-gray-50 pt-4 flex justify-end">
+        <form method="dialog">
+          <button class="btn btn-primary btn-sm px-6 h-10 bg-indigo-600 border-none hover:bg-indigo-700 text-white normal-case">Close</button>
+        </form>
+      </div>
     </div>
-  </div>
-</dialog>
+  </dialog>
 
     <!-- js connected here -->
     <script src="./scripts/script.js"></script>

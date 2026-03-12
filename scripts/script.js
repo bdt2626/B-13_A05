@@ -144,7 +144,6 @@ async function openDetails(idd) {
         const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${idd.id}`);
         const result = await res.json();
 
-        console.log("Single Issue Data:", result);
 
         
         const data = result.data; 
