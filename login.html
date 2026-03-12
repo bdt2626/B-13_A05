@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  <!-- log in page start -->
+   <div class="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 w-full max-w-md">
+        
+        <div class="flex flex-col items-center mb-10">
+            
+            <div class="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center mb-6 overflow-hidden border border-slate-200">
+              <img src="./images/github-logo.png" alt="Logo" class="object-cover w-full h-full">
+            </div>
+
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">GitHub Issues Tracker</h1>
+            <p class="text-slate-500 mt-2 text-center">Sign in to manage your issues</p>
+        </div>
+
+        <form id="login-form" class="space-y-6">
+            
+            <div class="form-control w-full">
+                <label class="label pb-2">
+                    <span class="label-text font-semibold text-slate-800">Username</span>
+                </label>
+                <input type="text" id="username" placeholder="Enter Username" required
+                    class="input input-bordered w-full h-12 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-lg" />
+            </div>
+
+            <div class="form-control w-full">
+                <label class="label pb-2">
+                    <span class="label-text font-semibold text-slate-800">Password</span>
+                </label>
+                <input type="password" id="password" placeholder="Enter Password" required
+                    class="input input-bordered w-full h-12 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-lg" />
+            </div>
+
+            <button type="submit" class="btn bg-indigo-600 hover:bg-indigo-700 text-white border-none w-full h-12 mt-4 text-lg rounded-lg font-bold">
+                Sign In
+            </button>
+        </form>
+
+    </div>
+</div>
+ 
+
+
+
+  
+
+
+    <!-- js connected here -->
+    <script src="./scripts/script.js"></script>
+    <script>
+    const loginForm = document.getElementById('login-form');
+
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault(); 
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+       if (username === 'admin' && password === 'admin123') {
+    sessionStorage.setItem('isLoggedIn', 'true');
+    window.location.href = 'index.html'; 
+}
+    });
+</script>
+</body>
+</html>
